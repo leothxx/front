@@ -8,7 +8,15 @@
   <script>
     'use strict';
     function fCheck() {
-      let gender = document.myform.gender.value;
+      let gender;
+      // if(document.getElementById("gender1").value == "男"){
+      //   gender = "男";
+      // }
+      // if(document.getElementById("gender2").value == "女") {
+      //   gender = "女";
+      // } 값을 비교하는게 아니라 check 여부를 비교해야함 .. ㅎㅎㅎ..
+      if(document.getElementsByName("gender")[0].checked) gender="男";
+      if(document.getElementsByName("gender")[1].checked) gender="女"; /* 같은 name의 값은 순서대로 배열에 들어있음. */
       // demo.innerText = gender;
       if(gender == "男") {
         demo.innerHTML = "<font color='blue'><b>"+gender+"</b></font>";
