@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <script>
+    'use strict';
+    function msg1() {
+      let su1 = prompt("수1을 입력하세요");
+      document.write("<br/>su1 : ", su1);
+      let ans = confirm("작업을 계속 하시겠습니까?");
+      document.write("<br/>ans : " + ans);
+      //if(ans == true) { /* 자바 스크립트에선 equrls가 없어서 == 사용하면됨, 참고로 스크립트에선 === 도 있음. ==은 값의 동일을 확인하고, ===는 값과, 속성(타입)까지 비교를 한다. */
+      if(ans) { /* 자바에선 논리형으로 비교함. = ans가 true면 */
+        alert("작업을 계속합니다.");
+      }
+      else {
+        alert("수고하셨습니다.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>메세지를 통한 값의 입력</h2>
+  <p>값을 입력해보세요
+    <input type="button" value="값입력" onclick="msg1()"/>
+  </p>
+  
+</body>
+</html>

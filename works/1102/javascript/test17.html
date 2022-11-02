@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test17.html</title>
+  <script>
+    'use strict';
+    function fCheck() {
+      let address = document.getElementById("address").value;
+
+      if(address.trim() == ""){ /* 공백을 제거하고 비교함. java와 동일 */
+        alert("주소를 입력하세요.");
+        document.getElementById("address").focus(); /* 주소 입력창에 포커스를 맞춤. */
+      }
+      else if(address == "내사이트"){
+        demo.innerHTML = "<a href='https://wity.im/leothx_x' target='_blank'>"+ address
+          +"</a> <input type='button' value='지우기' onclick='urlClear()'/>";
+        document.getElementById("demo").value = address;
+      }
+      else {
+        console.log("address : "+address);
+        //demo.innerText = address; /* form태그 안에 있지 않다면. demo안에 텍스트를 넣는다는 의미로 .innerText를 준다. */
+        //demo.innerHTML = address; // 텍스트는 입력한 그대로 나오고, html은 html만의 언어로 번역해서 나옴.
+        demo.innerHTML = "<a href='http://" + address + "' target='_blank'>"+ address
+          +"</a> <input type='button' value='지우기' onclick='urlClear()'/>";
+      }
+    }
+    function urlClear() {
+      myform.address.value="";
+      demo.innerText = "";
+    }
+  </script>
+</head>
+<body>
+  <p>
+    이동할 주소를 입력 후 이동 버튼을 클릭하면 입력된 주소가
+    가상(demo)에 출력되어, 그 주소를 클릭하면 새창으로 이동합니다.
+  </p>
+  <hr/>
+  <form name="myform">
+    <div>
+      이동할 주소 : <input type="text" name="address" id="address" placeholder="이동할 주소를 입력하세요."/>
+      <input type="button" value="이동" onclick="fCheck()"/>
+    </div>
+  </form>
+  <hr/>
+  <div id="demo"></div> <!-- 가상 위치로 지정하겠음.-->
+</body>
+</html>

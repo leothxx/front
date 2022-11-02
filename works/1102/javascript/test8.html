@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7.html</title>
+  <script>
+    'use strict'; /* 입력하면 모든 변수에 선언을 해야함. [기본적으로 use strict 무조건 넣어주기] */
+    const su1 = 100; /* const는 상수 개념임. java의 static final 과 같다고 생각하면 됨*/
+    console.log("su1: " , su1);
+    console.log(typeof(su1)); /* su1의 타입은 number 임 */
+
+    //su1 = "서울";
+    console.log("su1: " , su1);
+    console.log(typeof(su1)); /* su1의 타입은 number 임 */
+
+    let su2 = 200;
+    console.log("su2: " , su2);
+    console.log(typeof(su2));
+    let su3;
+    {
+      su3 = 300; /* let로 선언하면 중블록 안에서만 한함. */
+      console.log("su3: " , su3);
+      console.log("1: ",su2 + su3); /* 연산 가능 */
+    }
+    console.log("2: ",su2 + su3); /* 자바스크립트는 쓰레기값을 버리지 않기에 중블록 안에서의 값이 계속 유지됨. */
+  </script>
+</head>
+<body>
+  <h2>자바스크립트 학습</h2>
+</body>
+</html>

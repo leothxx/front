@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>html15.html</title>
+  <style>
+    #overflowText {
+      width: 200px;
+      height: 150px;
+      background-color: #ccc;
+      padding: 15px;
+      border: 1px solid black;
+      overflow: scroll; /* 기본:none xy축:scroll*/
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Overflow</h2> <!-- 내용이 넘칠때 사용하는 것-->
+  <p><b>Γιατί το χρησιμοποιούμε;</b></p>
+  <div id="overflowText">
+    Είναι πλέον κοινά παραδεκτό ότι ένας αναγνώστης αποσπάται από το περιεχόμενο που διαβάζει, όταν εξετάζει τη διαμόρφωση μίας σελίδας. Η ουσία της χρήσης του Lorem Ipsum είναι ότι έχει λίγο-πολύ μία ομαλή κατανομή γραμμάτων, αντίθετα με το να βάλει κανείς κείμενο όπως 'Εδώ θα μπει κείμενο, εδώ θα μπει κείμενο', κάνοντάς το να φαίνεται σαν κανονικό κείμενο. Πολλά λογισμικά πακέτα ηλεκτρονικής σελιδοποίησης και επεξεργαστές ιστότοπων πλέον χρησιμοποιούν το Lorem Ipsum σαν προκαθορισμένο δείγμα κειμένου, και η αναζήτησ για τις λέξεις 'lorem ipsum' στο διαδίκτυο θα αποκαλύψει πολλά web site που βρίσκονται στο στάδιο της δημιουργίας. Διάφορες εκδοχές έχουν προκύψει με το πέρασμα των χρόνων, άλλες φορές κατά λάθος, άλλες φορές σκόπιμα (με σκοπό το χιούμορ και άλλα συναφή).
+  </div>
+  <hr/>
+  <div>
+    그림<br/>
+    <p><img src="../../images/psg.jpg" width="300px"/></p>
+    <p><img src="../../images/psg.jpg" width="300px" style="opacity:0.2;"/></p>
+    <p><img src="../../images/psg.jpg" width="300px" style="opacity:0.5;"/></p>
+  </div>
+</body>
+</html>

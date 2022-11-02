@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test15.html</title>
+  <script>
+    'use strict';
+    function calc() {
+      let tot = eval(document.getElementById("res").value);
+      myform.result.value = tot;
+    }
+  </script>
+</head>
+<body>
+  <h2>계산하기</h2>
+  <form name="myform" method="get" action="#">
+    <p>
+      <label for="res">입력창</label>:
+      <input type="text" name="res" id="res"/> 
+    </p>
+    <p>
+      <input type="button" value="계산" onclick="calc()"/> 
+    </p>
+    <p>
+      <label for="result">결과창</label>:
+      <input type="text" name="result" id="result" readonly/> 
+    </p>
+  </form>
+</body>
+</html>
