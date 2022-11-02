@@ -9,6 +9,7 @@
     'use strict';
     function fCheck() {
       let gender;
+      let color;
       // if(document.getElementById("gender1").value == "男"){
       //   gender = "男";
       // }
@@ -19,11 +20,12 @@
       if(document.getElementsByName("gender")[1].checked) gender="女"; /* 같은 name의 값은 순서대로 배열에 들어있음. */
       // demo.innerText = gender;
       if(gender == "男") {
-        demo.innerHTML = "<font color='blue'><b>"+gender+"</b></font>";
+        color = "#aaa";
       }
       else {
-        demo.innerHTML = "<font color='red'><b>"+gender+"</b></font>";
+        color = "pink";
       }
+      demo.innerHTML = "<font color='"+color+"'><b>"+gender+"</b></font>";
     }
   </script>
 </head>

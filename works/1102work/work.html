@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1102과제 계산기 만들기</title>
+  <script>
+    'use strict';
+    let su1=0, su2=0, tot=0;
+    let check;
+    let bl = true;
+    
+    function calc(su) {
+      if(su < 11 && bl == true){
+        if(su1==0&&su!=0){
+          su1 = su;
+          demo.innerText = su1;
+        }
+        else {
+          su1 = (su1*10) + su;
+          demo.innerText = su1;
+        }
+      }
+      else if(su < 11) {
+        if(su1!=0 && su2==0) {
+          su2 = su;
+          demo.innerText = su2;
+        }
+        else {
+          su2 = (su2*10) + su;
+          demo.innerText = su2;
+        }
+      }
+      if(parseInt(su) == 12) {
+        bl = false;
+        check = 1;
+      }
+      else if(parseInt(su) == 13) {
+        bl = false;
+        check = 2;
+      }
+      else if(parseInt(su) == 14) {
+        bl = false;
+        check = 3;
+      }
+      else if(parseInt(su) == 15) {
+        bl = false;
+        check = 4;
+      }
+    }
+    function calc2() {
+      if(check==1) tot = su1 / su2;
+      if(check==2) tot = su1 * su2;
+      if(check==3) tot = su1 - su2;
+      if(check==4) tot = su1 + su2;
+      demo.innerText = tot;
+      bl = true;
+      su1 = 0;
+      su2 = 0;
+    }
+    function calcReset() {
+      demo.innerText = "";
+      su1 = 0;
+      su2 = 0;
+    }
+  </script>
+  <style>
+    body {
+      width:223px;
+      height:332px;
+      margin: 0 auto;
+      border: 1px solid gray;
+    }
+    table {
+      padding: 0px;
+      margin: 0px;
+    }
+    input[type="button"] {
+      text-align: center;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+    input[type="button"]:hover {
+      cursor: pointer;
+    }
+    .btn {
+      width: 50px;
+      height: 50px;
+      background-color: bisque;
+    }
+    .btn0{
+      width: 105px;
+    }
+    .btn1 {
+      width: 50px;
+      height: 50px;
+      background-color: coral;
+    }
+    .btn2 {
+      width: 105px;
+      height: 50px;
+      background-color: darkolivegreen;
+    }
+    .btn3 {
+      width: 161px;
+      height: 50px;
+      background-color: indianred;
+    }
+    #demo {
+      width: 208px;
+      height: 50px;
+      border: 1px solid gray;
+      padding: 3px 4px 2px 3px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <form name="myform" method="get" action="#">
+      <tr>
+        <td>
+          <div id="demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="AC" onclick="calcReset()" class="btn3"/>
+          <input type="button" value="÷" onclick="calc(12)" class="btn1"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="7" onclick="calc(7)" class="btn"/>
+          <input type="button" value="8" onclick="calc(8)" class="btn"/>
+          <input type="button" value="9" onclick="calc(9)" class="btn"/>
+          <input type="button" value="×" onclick="calc(13)" class="btn1"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="4" onclick="calc(4)" class="btn"/>
+          <input type="button" value="5" onclick="calc(5)" class="btn"/>
+          <input type="button" value="6" onclick="calc(6)" class="btn"/>
+          <input type="button" value="-" onclick="calc(14)" class="btn1"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="1" onclick="calc(1)" class="btn"/>
+          <input type="button" value="2" onclick="calc(2)" class="btn"/>
+          <input type="button" value="3" onclick="calc(3)" class="btn"/>
+          <input type="button" value="+" onclick="calc(15)" class="btn1"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="0" onclick="calc(0)" class="btn btn0"/>
+          <input type="button" value="=" onclick="calc2()" class="btn2"/>
+        </td>
+      </tr>
+    </form>
+  </table>
+</body>
+</html>
