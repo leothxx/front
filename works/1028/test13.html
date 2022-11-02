@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test13.html</title>
+  <style>
+    li {
+      list-style: none; /*리스트나오는거 가리기*/
+      line-height: 30px;
+    }
+    a {
+      color: blue; /*무조건 파란색*/
+      text-decoration: none;
+    }
+    a:hover{ /*갖다댄 순간*/
+      color: chocolate;
+      text-decoration: underline;
+    }
+    a:active{ /*마우스를 누르는 순간 active */
+      color: red;
+      text-decoration: overline;
+    }
+    .ap {
+      color: blue;
+      font-size: 20pt;
+      cursor : pointer; /*커서 모양을 포인터로 바꿈 (손가락나옴)*/
+    }
+    .ap:hover {
+      color: chocolate;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>a 태그 속성변경</h2>
+  <div>
+    <ul>
+      <li><a href="https://www.naver.com" target="_blank">Naver</a></li>
+      <li><a href="http://www.daum.net" target="_blank">다음 커뮤니티</a></li>
+      <li><a href="http://www.imbc.com" target="_blank">MBC방송국</a></li>
+      <li><a href="test12.html" target="_blank">test12문서</a></li>
+      <li><a href="../../images/1860뮌헨.jpg" target="_blank">1860뮌헨</a></li>
+    </ul>
+  </div>
+  <hr/>
+  <p class="ap">1.반응연습하기</p>
+  <p>2.반응연습하기</p>
+</body>
+</html>

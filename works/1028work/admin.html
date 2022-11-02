@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>admin</title>
+  <style>
+    * {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    body {
+      margin: 0px;
+    }
+    header {
+      height: 100px;
+      text-align: left;
+      font-size: 1.2em;
+    }
+    .content1 {
+      float: left;
+      width: 150px;
+      height: 815px;
+    }
+    .content2 {
+      float: left;
+      width: 700px;
+      height: 815px;
+    }
+    .content3 {
+      float: left;
+      width: 150px;
+      height: 815px;
+    }
+    .aside1 {
+      position: absolute;
+      z-index: 99;
+    }
+    .layer1, .layer2, .layer3 {
+      float: left;
+      height: 815px;
+    }
+    .layer1 {
+      width: 148px;
+      border: 1px solid black;
+    }
+    .layer2 {
+      width: 650px;
+      height: 150px;
+      margin: 15px 24px;
+      border: 1px solid black;
+    }
+    .layer3 {
+      position: absolute;
+      width: 148px;
+      border: 1px solid black;
+    }
+    .layer4 {
+      float: left;
+      margin: 30px 19px 30px 50px;
+      width: 278px;
+      height: 400px;
+      left: 22px;
+      top: 15px;
+      border: 1px solid blue;
+    }
+    .layer5 {
+      float: left;
+      margin: 30px 50px 30px 19px;
+      width: 278px;
+      height: 400px;
+      border: 1px solid blue;
+    }
+    .layer6 {
+      float: left;
+      margin: 20px 49px;
+      width: 600px;
+      height: 100px;
+      border: 1px solid blue;
+    }
+    .menu {
+      position: absolute;
+      font-size: 1.2em;
+      text-align: left;
+      left: -4px;
+      top: 600px;
+      width: 100px;
+      height: 200px;
+    }
+    ul li {
+      list-style: none;
+    }
+    .setting {
+      text-decoration: none;
+      color : #aaa;
+    }
+    .setting:hover {
+      text-decoration: underline;
+      color : red;
+    }
+    .menubtn {
+      position: absolute;
+      left: 53px;
+      top: -25px;
+    }
+    footer {
+      clear: both;
+      height: 100px;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <br/>
+      <div><b>Homme élégant</b></div>
+    </header>
+    <section>
+      <div class="content1">
+        <div class="layer1">admin pages</div>
+        </div>
+      </div>
+      <div class="content2">
+        <div class="layer2">PPL1</div>
+        <div class="layer4">PPL2</div>
+        <div class="layer5">PPL3</div>
+        <div class="layer6">PPL4</div>
+        </div>
+      </div>
+      <div class="content3">
+        <div class="layer3">여백</div>
+        </div>
+      </div>
+    </section>
+    <aside>
+      <div class="aside1">
+        <div class="menu">
+          <ul>
+            <li><div class="menubtn">menu</div></li>
+            <li><a href="#" class="setting">회원관리</a></li>
+            <li><a href="#" class="setting">상품관리</a></li>
+            <li><a href="#" class="setting">배송관리</a></li>
+            <li><a href="#" class="setting">주문관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <footer>
+      <div>푸터</div>
+    </footer>
+  </div>
+</body>
+</html>

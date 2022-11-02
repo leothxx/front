@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test7(테이블에 hover 연습)</title>
+  <style>
+    table {
+      width: 400px;
+      height: 250px;
+      border-collapse: collapse; /* html5에서 cellspancing이 사라짐. 선 사이 간격 무시. html5 */
+    }
+    th, td {
+      border: 1px solid green;
+      text-align: center;
+      padding: 10px;
+    }
+    /* thead { */
+    th {
+      background-color: khaki;
+    }
+    tfoot {
+      background-color: pink;
+    }
+    tr:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <h2>테이블 연습</h2>
+  <br/>
+  <div>
+    <table>
+      <thead> <!-- t head -->
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th class="td3">3</th>
+          <th>4</th>
+        </tr>
+      </thead>
+      <tbody> <!-- t body -->
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </trid=>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td class="td3">3</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+      <tfoot> <!-- 대부분의 테이블에선 t foot 를 줘서 따로 관리함.-->
+        <tr>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <hr/>
+  <div id="layer1"></div>
+  <div id="layer2"></div>
+  <div id="layer3"></div>
+  <div id="layer4"></div>
+</body>
+</html>

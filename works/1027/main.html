@@ -1,0 +1,16 @@
+<html> <!-- 프레임은 내용이 필요 없기에, head만 있음 -->
+  <head>
+  <!-- frameborder : 프레임사이의 경계선표시여부(1:표시, 0:해제)
+       scrolling   : auto/yes/no 
+  -->
+    <frameset rows="200px,*,300px" border="0px" frameborder="1" framespacing="0px"> <!-- 고정하려면 %단위가 아닌 px단위로 값을 줘야함. -->
+      <frame src="a.html" noresize scrolling="yes" marginheight="0px" marginwidth="0px"> <!-- noresize는 크기 고정, scrolling="no" 스크롤바 안나옴 -->
+    <frameset cols="220px,*,300px">
+        <frame src="b.html" noresize>
+        <frame src="c.html">
+        <frame src="e.html" noresize>
+      </frameset>
+      <frame src="d.html">
+    </frameset>
+  </head>
+</html>

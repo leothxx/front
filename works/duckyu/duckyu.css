@@ -1,0 +1,228 @@
+/* duckyu.css */
+/* PC화면을 주 화면으로 기본설계하였음(최소 1024px 기준) */
+/* 공통사항 */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "맑은고딕","굴림","돋움","궁서";
+  font-size: 1em;
+  background: linear-gradient(to bottom, skyblue, white 50%);
+  background-attachment: fixed; /* 만약에 그림을 넣더라도, 그림의 위치를 고정 */
+}
+ul li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+a { /* 모바일일 경우가 있기에 hover를 주지 않음.*/
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/* PC모드 설정하기(태블릿/모바일에서 지정하지 않으면 이곳도 공통으로 적용된다.) */
+#container { /* 문서 전체를 의미함 */
+  width: 960px;
+  margin: 0 auto; /* 가운데 정렬 */
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#mainHeader { /* 헤더(타이틀바 영역) */
+  height: 280px;
+  margin-top: 0px;
+  background-image: url("images/12.jpg");
+  background-repeat: no-repeat; /* 이미지를 반복 처리 하지 않음 */
+  background-position: left top; /* 백그라운드의 이미지를 왼쪽 위로 고정 */
+}
+
+#mainHeader h1 { /* 타이틀바의 제목(로고) */
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.header1 a { /* 타이틀바의 제목(로고) 링크(a) */
+  color: #ff0;
+  font-size: 2em;
+  text-shadow: 1px 2px 1px #000; /* x,y,투명도,색깔 */
+}
+
+#mainNav { /* 네비게이션(메뉴)바 디자인 */
+  width: 960px;
+  height: 60px;
+  background-color: #060;
+  /* margin-top: -16px; */
+}
+
+#mainNav ul { /* 메뉴 */
+  text-align: center;
+  margin: 0px;
+}
+
+#mainNav ul li { /* 메뉴목록 */
+  float: left; /* 인라인 형식으로 변경 일렬로 정렬 */
+  width: 100px;
+  height: 40px;
+  font-size: 1.1em;
+  padding: 20px 0px 0px 90px;
+}
+
+#mainNav a {
+  display: block;
+  color: white;
+  font-weight: bolder;
+}
+
+#mainNav a:hover {
+  color: #000;
+}
+
+#content { /* 본문 전체 영역 */
+  width: 720px;
+  float: left;
+  background-color: white;
+  padding-left: 10px;
+}
+
+#footer { /* 푸터영역 */
+  clear: both;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0px 20px;
+}
+
+#sidebar { /* 어사이드(사이드바 : 그림(광고)처리) */
+  float: right;
+  width: 200px;
+  padding: 20px 10px;
+}
+
+#sidebar img { /* 사이드바에 있는 이미지파일 */
+  border: 1px solid #aaa;
+  margin-bottom: 12px; /* 사진 밑에 띄우기 */
+}
+
+#sidebar img:hover { /* 사이드바에 있는 이미지파일에 마우스 올렸을 때 */
+  border: 1px solid #000;
+  opacity: 0.8; /* 불투명도 80% (투명도 20%) */
+}
+
+.notice li { /* 하단 article 목록(대피소 이용안내) */
+  list-style: circle;
+}
+
+/* 태블릿 화면 (최소 600px ~ 최대 1023px) */
+/* @import url(../../); 외부 css 가져오는 방법 */
+@media screen and (min-width:600px) and (max-width:1023px) {
+  #container { /* 문서 전체를 의미함 */
+    width: 580px;
+  }
+  
+  #mainHeader { /* 헤더(타이틀바 영역) */
+    height: 170px;
+    background-image: url("images/11.jpg");
+  }
+  
+  #mainHeader h1 { /* 타이틀바의 제목(로고) */
+    position: absolute;
+    margin-top: 20px;
+  }
+  
+  .header1 a { /* 타이틀바의 제목(로고) 링크(a) */
+    font-size: 1.5em;
+  }
+  
+  #mainNav { /* 네비게이션(메뉴)바 디자인 */
+    width: 580px;
+  }
+  
+  #mainNav ul li { /* 메뉴목록 */
+    width: 90px;
+    font-size: 1em;
+    padding: 20px 0px 0px 30px;
+  }
+  
+  #content { /* 본문 전체 영역 */
+    width: 550px;
+  }
+  
+  #footer { /* 푸터영역 */
+    font-size: 0.8em;
+  }
+  
+  #sidebar { /* 어사이드(사이드바 : 그림(광고)처리) */
+    width: 550px;
+    padding: 0px 10px;
+  }
+  
+  #sidebar img { /* 사이드바에 있는 이미지파일 */
+    margin-bottom: 12px; /* 사진 밑에 띄우기 */
+    width: 32%;
+  }
+}
+
+/* 모바일 화면 (최대 599px) */
+@media screen and (max-width:599px) {
+  #container { /* 문서 전체를 의미함 */
+    width: 320px; /* 요새는 360, 옛날폰은 320 */
+  }
+  
+  #mainHeader { /* 헤더(타이틀바 영역) */
+    height: 90px;
+    background-image: url("images/13.jpg");
+  }
+  
+  #mainHeader h1 { /* 타이틀바의 제목(로고) */
+    position: absolute;
+    margin-top: 15px;
+  }
+  
+  .header1 a { /* 타이틀바의 제목(로고) 링크(a) */
+    font-size: 0.8em;
+  }
+  
+  #mainNav { /* 네비게이션(메뉴)바 디자인 */
+    width: 320px;
+    height: 0px;
+  }
+  
+  #mainNav ul li { /* 메뉴목록 */
+    width: 280px;
+  }
+
+  #mainNav a {
+    display: block; /* 각각 영역차지 */
+    color: brown;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0px 100px 0px -120px;
+    font-size: 0.92em;
+    padding: 10px 0px;
+  }
+
+  #content { /* 본문 전체 영역 */
+    width: 310px;
+    margin-top: 10px;
+  }
+  
+  #footer { /* 푸터영역 */
+    font-size: 0.6em;
+  }
+  
+  #sidebar { /* 어사이드(사이드바 : 그림(광고)처리) */
+    width: 320px;
+    padding: 0px;
+  }
+  
+  #sidebar img { /* 사이드바에 있는 이미지파일 */
+    border: 1px solid #ccc;
+    margin:0px 0px 2px 2px; /* 사진 밑에 띄우기 */
+    width: 98%;
+  }
+
+  #sidebar img:hover {
+    border: 1px solid black;
+    opacity: 0.8;
+  }
+}

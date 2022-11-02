@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+    <style>
+        .logo {
+            font-size: 3px;
+            color: black;
+        }
+        .tb {
+            font-size: 12px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">SIGN UP</div>
+    <br/><br/><br/>
+    <hr width="1000px" align="center"/>
+    <table border="0px" width="1000px" class="tb" cellpadding="10px" cellspacing="0px">
+        <tr>
+            <td><div>회원구분</div></td>
+            <td size="30" class="line"><input type="radio" name="radio" id="radio1"/>개인회원&nbsp&nbsp<input type="radio" name="radio" id="radio2"/>사업자회원<input type="radio" name="radio" id="radio3"/>&nbsp&nbsp외국인회원(foreigner)</td>
+        </tr>
+    </table>
+    <hr width="1000px" align="center"/>
+    <br/>
+    <table border="1px" width="1000px" class="tb" cellpadding="10px" cellspacing="0px">
+        <tr>
+            <td class="line"><div>아이디</div></td>
+            <td width="295px"><input type="text" name="mid" id="mid" size="20px" maxlength="12px" placeholder="아이디">&nbsp<input type="button" name="check" id="check" value="아이디 중복확인"></td>
+            <td><div>(영문소문자/숫자, 4~16자)</div></td>
+        </tr>
+        <tr>
+            <td class="line"><div>비밀번호</div></td>
+            <td width="295px"><input type="password" name="pwd" id="pwd" size="20px" maxlength="14px" placeholder="비밀번호"></td>
+            <td><div>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</div></td>
+        </tr>
+        <tr>
+            <td class="line"><div>비밀번호 확인</div></td>
+            <td width="295px"><input type="password" name="pwd" id="pwd" size="20px" maxlength="14px" placeholder="비밀번호"></td>
+        </tr>
+        <tr>
+            <td class="line"><div>이름</div></td>
+            <td width="295px"><input type="text" name="name" id="name" size="20px" maxlength="12px" placeholder="이름"></td>
+        </tr>
+        <tr>
+            <td class="line"><div>주소</div></td>
+            <td width="295px"><input type="text" name="address" id="address" size="40px" maxlength="30px" placeholder="주소"></td>
+        </tr>
+        <tr>
+            <td class="tel"><div>휴대전화</div></td>
+            <td width="10px">
+                <form>
+                    <select name="telnumber">
+                        <option value="010">010</option>
+                        <option value="010">011</option>
+                        <option value="010">012</option>
+                        <option value="010">013</option>
+                        <option value="010">014</option>
+                        <option value="010">015</option>
+                    </select>
+                    - <input type="text" name="num1" id="num1" size="5px" maxlength="4px"> - <input type="text" name="num1" id="num1" size="5px" maxlength="4px">
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

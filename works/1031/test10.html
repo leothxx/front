@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <style>
+    #imgParent {
+      width: 500px; /* 그림의 크기가 같게 */
+      /* margin: 0 auto; /* 그림위에 이니셜을 주는데, 그림 사이즈가 자동으로 가운데로 오기에, 이니셜의 위치가 달라짐 */
+      position: relative; /* 현재위치 기준으로 밀기 */
+      left: 300px;
+      top: 200px; /* 이니셜을 넣기 위한 위치 고정. */
+    }
+    #sign {
+      position: absolute; /* 부모를 따라 가야함 absolute 지정 */
+      right: 10px; /* 오른쪽에서 10px만큼 떨어지고 */
+      bottom: 10px; /* 밑에서 10px만큼 올라감 */
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h2>그림안에서 이니셜을 자유롭게 배치하기</h2>
+  <div id="imgParent">
+    <img src="../../images/첼시.jpg" width="500px"/>
+    <div id="sign">Design By leothxx</div>
+  </div>
+</body>
+</html>

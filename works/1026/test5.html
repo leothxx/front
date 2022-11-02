@@ -1,0 +1,141 @@
+<html>
+  <haad>
+    <title>폼(양식)태그 연습</title>
+  </head>
+  <body>
+    <h2>Form태그 = 양식태그</h2>
+    <!--
+      <form name="폼이름" method="전송방식" action="서버로 전송되는 파일명">~내 투더 용~~</form>
+      
+      method(전송방식) : get방식 / post방식
+        - get : URL을 통해서 자료를 전달함.
+        - post : HTTP 프로토콜의 헤더(Header)에 정보를 함께 전달시켜주는 방식.   
+    -->
+    <h2>입력양식 연습</h2>
+    <form name="myform" method="get" action="#">
+      <p>
+        <b>텍스트박스(TextBox)</b><br/>
+        1-1.<label for="irum1">성명1</label> : <input type="text" name="irum1" id="irum1"/><br/> <!-- 백엔드에선 name을 무조건 요청해야함. -->
+        1-2.성명2 : <input type="text" name="irum2" id="irum2" size="3" maxlength="3"/><br/>
+        1-3.성명3 : <input type="text" name="irum3" id="irum3" value="홍길동"/><br/> <!-- value를 넣으면 입력값이 초기값 지정됨 -->
+        1-4.성명4 : <input type="text" name="irum4" id="irum4" placeholder="성명을 입력하세요."/><br/>
+        1-5.성명5 : <input type="text" name="irum5" id="irum5" placeholder="성명을 입력하세요." autofocus/><br/> <!-- 커서가 처음부터 화면에 떴을 때 그 위치로 감.-->
+        </p>
+        <p>
+          2-1.<label for="age1">나이1</label> : <input type="number" name="age1" id="age1"/><br/> <!-- 웹에선 숫자도 무조건 문자임. 백에서 Integer로 정수로 바꿔야함 -->
+          2-2.나이2 : <input type="number" name="age2" id="age2" value="20" min="20" max="40" /><br/>
+          2-3.주문수량 : <input type="number" name="su" id="su" value="5" min="5" max="100" step="5"/><br/> <!-- 주문이 5개의 다발로 올라감 -->
+        </p>
+        <p>
+          3.비밀번호 : <input type="password" name="pwd" id="pwd"/>
+        </p>
+        <p>
+          4.생일 : <input type="date" name="birthday" id="birthday"/><br/>
+          5.창립일 : <input type="date" name="birthday2" id="birthday2" value="2022-10-31" readonly/><br/> <!-- readonly하면 값이 안바뀜 -->
+          6.출근시간 : <input type="time" name="time1" id="time1" value="09:10"/><br/>
+          7.출근시간 : <input type="time" name="time2" id="time2" value="09:10" readonly/><br/> <!-- 출근시간 고정 -->
+          8.출근시간 : <input type="datetime-local" name="time3" id="time3"/><br/>
+          9.출근시간 : <input type="datetime-local" name="time4" id="time4" value="2022-11-05T15:30"/><br/> <!-- 시간은 T00:00 -->
+        </p>
+        <p>
+          - 라디오버튼(그룹처리 후 사용한다. 기본선택:checked)<br/>
+          성별 :
+          <input type="radio" name="gender" id="gender1" value="male" checked/>남자
+          <input type="radio" name="gender" id="gender2" value="female"/>여자 <!-- name은 같은 이름으로 주면, 알아서 그룹이 됨. 하지만 id는 한번만 줘야함.-->
+        </p>
+        <p>
+          - 체크박스(그룹처리 후 사용한다. 초기값은 checked)<br/> <!-- 체크박스는 중복 선택이 가능하기에, 배열로 값이감. 고로 배열로 받아야 함. -->
+          취미 :
+          <input type="checkbox" name="hobby" id="hobby1" value="축구"/>축구
+          <input type="checkbox" name="hobby" id="hobby2" value="싸이클"/>싸이클
+          <input type="checkbox" name="hobby" id="hobby3" value="여행"/>여행
+          <input type="checkbox" name="hobby" id="hobby4" value="사진"/>사진
+          <input type="checkbox" name="hobby" id="hobby5" value="패션"/>패션
+          <input type="checkbox" name="hobby" id="hobby6" value="헬스"/>헬스
+        </p>
+        <p>
+          - 콤보상자(comboBox) : 기본크기(size)는 1이다.(기본선택:selected)<br/>
+          좋아하는산 :
+          <select name="mnt">
+            <option value="백두산">백두산</option>
+            <option value="한라산">한라산</option>
+            <option value="후지산">후지산</option>
+            <option value="지리산" selected>지리산</option> <!-- 기본 선택 값 -->
+            <option value="태백산">태백산</option>
+            <option value="소백산">소백산</option>
+          </select>
+        </p>
+        <p>
+          - 리스트박스(listBox) : 기본선택:selected<br/>
+          좋아하는산2 :
+          <select name="mnt2" size="5" multiple> <!-- 콤보상자에 사이즈가 들어가면 리스트박스가 됨. 리스트박스는 기본크기X [ multiple은 중복선택 가능함. (얘도 배열)] -->
+            <option value="백두산">백두산</option>
+            <option value="한라산">한라산</option>
+            <option value="후지산">후지산</option>
+            <option value="지리산">지리산</option>
+            <option value="태백산">태백산</option>
+            <option value="소백산">소백산</option>
+            <option value="월악산">월악산</option>
+            <option value="설악산">설악산</option>
+            <option value="속리산">속리산</option>
+            <option value="북한산">북한산</option>
+            <option value="금강산">금강산</option>
+          </select>
+        </p>
+        <p>
+          - 메모형식 : textarea<br/>
+          자기소개<br/>
+          <textarea rows="5" cols="50" name="content" id="content" placeholder="자기소개">성명 : </textarea> <!-- 텍스트에어리어엔 밸류가 없음. 그냥 성명: 쓰면 됨. -->
+        </p>
+        <p>
+          - 색상 선택 : <input type="color" name="color" id="color"/>
+        </p>
+        <p>
+          - 메일 주소 : <input type="email" name="email" id="email" value="shn2769@naver.com"/> <!-- 이메일 값 받을때 -->
+        </p>
+        <p>
+          - 검색기 : <input type="search" name="search" id="search"/>
+        </p>
+        <p>
+          - 첨부파일 : <input type="file" name="file"/> <!-- 파일 올릴때 -->
+        </p>
+        <hr/>
+        <p>
+          -옵션 그룹<br/>
+          <select name="class">
+            <optgroup label="공과대학">
+              <option>컴퓨터공학과</option>
+              <option>자동차공학과</option>
+              <option>토목공학과</option>
+              <option>건축공학과</option>
+              <option>기계공학과</option>
+            <optgroup>
+            <optgroup label="인문대학">
+              <option>사학과</option>
+              <option>어문학과</option>
+              <option>철학과</option>
+            <optgroup>
+          </select>
+        </p>
+        <p>
+          - 사용량(meter) : 전체 100%에서 사용된 양(여기서는 30%를 사용했다면 ?)
+          <meter value="30" min="0" max="100"></meter><br/>
+          - 사용량 : 전체 200%에서 30%를 사용했다면?
+          <meter value="30" min="0" max="200"></meter><br/>
+          - 최소사용량은 50%이고, 최대사용량이 100%일때 전체 사용량은 200%라고 가정하고, 현재 사용량이 130%라면?
+          <meter value="130" min="0" max="200" low="50" high="100"></meter><br/>
+        </p>
+        <p>
+          - 범위 : range<br/>
+          소리크기1 : <input type="range" name="volumn1"/><br/>
+          소리크기2 : <input type="range" name="volumn2" value="30" min="0" max="100"/><br/>
+          소리크기3 : <input type="range" name="volumn3" value="30" min="0" max="100" step="20"/><br/>
+        </p>
+        <p>
+          - 진행상황 : progress<br/>
+          진행중 : <progress></progress><br/>
+          진행후 10초 경과(100초기준) : <progress value="10" max="100"></progress><br/>
+        </p>
+    </form>
+  </body>
+</html>

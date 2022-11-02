@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>표태그 연습</title>
+  </head>
+  <body>
+    <h2>테이블 연습</h2><br/>
+    <!--
+     테이블(표) : <table> ~~~~ </table>
+     행 : <tr> ~~~~ </tr>
+     열 : <td> ~~~ </td> (테이블 컬럼이 아니라, 테이블 데이터임)
+    -->
+    <h2>길동이네 가족 소개 1</h2>
+    <table border>
+      <tr>
+        <td>관 계</td>
+        <td>성 명</td>
+        <td>직 업</td>
+      </tr>
+      <tr>
+        <td>아버지</td>
+        <td>홍장군</td>
+        <td>군 인</td>
+      </tr>
+      <tr>
+        <td>어머니</td>
+        <td>김말숙</td>
+        <td>회사원</td>
+      </tr>
+      </table>
+      <br/>
+      <h2>길동이네 가족 소개 2</h2>
+      <table border width="300px" height="250px">
+      <tr>
+        <td align="center">관 계</td>
+        <td><p align="center">성 명</p></td> <!-- 직접 p안에 넣어도 됨. -->
+        <td>직 업</td>
+      </tr>
+      <tr>
+        <td align="center">아버지</td> <!--td에 넣어도 됨.-->
+        <td align="center">홍장군</td>
+        <td align="center">군 인</td>
+      </tr>
+      <tr align="center"> <!-- 하나의 행이 무조건 가운데 정렬함 -->
+        <td>어머니</td>
+        <td>김말숙</td>
+        <td>회사원</td>
+      </tr>
+      </table>
+      <br/>
+      <h2>길동이네 가족 소개 3</h2>
+      <table border align="center" cellpadding="20px" background="../../images/첼시.jpg"> <!-- 테이블에 넣는건 테이블 자체의 가운데 정렬이 되기에, 불가능 -->
+        <caption><b>길동이네 <font size="5" color="blue">가족</font>을 소개합니다.</b></caption> <!-- 캡션은 표 제목 쓸 수 있음 -->
+        <tr>
+          <td>관 계</td>
+          <td bgcolor="red">성 명</td>
+          <td>직 업</td>
+        </tr>
+        <tr bgcolor="#FF0">
+          <td>아버지</td>
+          <td>홍<i>장</i>군</td>
+          <td>군 인</td>
+        </tr>
+        <tr>
+          <td>어머니</td>
+          <td>김<sup>말</sup>숙</td>
+          <td>회<sub>사</sub>원</td>
+        </tr>
+        <caption align="bottom"><b>길동이네 <font size="5" color="red">집</font>에 놀러오세요.</b></caption> <!-- 캡션은 표 제목 쓸 수 있음 -->
+        </table>
+      <br/>
+      <h2>길동이네 가족 소개 4</h2>
+    <!-- <table border bgcolor="#FF0"> -->
+    <table border="10px" bordercolor="red" cellpadding="15px" cellspacing="10px"> <!-- cellspacing은 테이블과 테이블의 사이 간격 -->
+      <tr>
+        <td>관 계</td>
+        <td>성 명</td>
+        <td>직 업</td>
+      </tr>
+      <tr>
+        <td>아버지</td>
+        <td>홍장군</td>
+        <td>군 인</td>
+      </tr>
+      <tr>
+        <td>어머니</td>
+        <td>김말숙</td>
+        <td>회사원</td>
+      </tr>
+      </table>
+      <br/>
+      <h2>길동이네 가족 소개 5</h2>
+    <table border="0px" cellpadding="15px" cellspacing="0px">
+      <tr bgcolor="red">
+        <td>관 계</td>
+        <td>성 명</td>
+        <td>직 업</td>
+      </tr>
+      <tr bgcolor="green">
+        <td>아버지</td>
+        <td>홍장군</td>
+        <td>군 인</td>
+      </tr>
+      <tr bgcolor="blue">
+        <td>어머니</td>
+        <td>김말숙</td>
+        <td>회사원</td>
+      </tr>
+    </table>
+    <br/><br/>
+      <h2>길동이네 가족 소개 6</h2>
+      <!-- <tr align="center"> -->
+      <table border cellpadding="30px" cellspacing="0px">
+        <tr bgcolor="pink">
+          <th>관 계</th> <!-- th T-head를 이용해 글씨에 굵기를 줌 -->
+          <td colspan="2" align="center">성 명/직 업</td> <!-- colspan은 열합치기. -->
+          <!-- <td>직 업</td> -->
+          <th>비 고</th>
+        </tr>
+        <tr>
+          <td rowspan="2">부 모</td> <!-- rowspan은 행합치기. -->
+          <td>홍장군</td>
+          <td>군 인</td>
+          <td rowspan="2"><a href="../../images/첼시.jpg" target="_blank" title="첼시 엠블럼"><img src="../../images/첼시.jpg" width="100px"></a></img></td>
+        </tr>
+        <tr>
+          <!-- <td>어머니</td> -->
+          <td>김말숙</td>
+          <td>회사원</td>
+        </tr>
+        <tr>
+          <td colspan="4" align="center">놀러오세요.</td>
+      </tr>
+    </table>
+    <br/>
+    <h2>길동이네 가족 소개 7</h2>
+    <figure>
+      <figurecaption>길동이와 함께 즐거운 생활을...</figurecaption>
+      <table border>
+        <tr>
+          <td>관 계</td>
+          <td>성 명</td>
+          <td>직 업</td>
+        </tr>
+        <tr>
+          <td>아버지</td>
+          <td>홍장군</td>
+          <td>군 인</td>
+        </tr>
+        <tr>
+          <td>어머니</td>
+          <td>김말숙</td>
+          <td>회사원</td>
+        </tr>
+        </table>
+      </figure>
+    <br/><br/>
+  </body>
+</html>

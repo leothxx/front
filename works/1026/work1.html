@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <title>첼시FC 선수 등록</title>
+  </head>
+  <body text="white">
+    <form name="cfcsingup" method="get" action="#">
+    <image src="../../images/첼시.jpg" width="200px"></image>
+    <h2><font color="#00F">첼시FC 선수 등록 창</font></h2>
+      <table border cellpadding="10px" cellspacing="0px" bgcolor="blue">
+        <tr>
+          <td>
+            이름
+          </td>
+          <td>
+            <input type="text" name="name" id="name" placeholder="성명을 입력하세요."/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            생년월일
+          </td>
+          <td>
+            <input type="date" name="birthday" id="birthday"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            성별
+          </td>
+          <td>
+            <input type="radio" name="gender" id="gender1" value="male" checked/>남자
+            <input type="radio" name="gender" id="gender2" value="female"/>여자
+          </td>
+        </tr>
+        <tr>
+          <td>
+            나이
+          </td>
+          <td>
+            <input type="number" name="age" id="age" min="4" max="45"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            키
+          </td>
+          <td>
+            <input type="number" name="tall" id="tall" min="100" max="220"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            몸무게
+          </td>
+          <td>
+            <input type="number" name="weight" id="weight" min="10" max="150"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            국적
+          </td>
+          <td>
+            <input type="text" name="country" id="country" placeholder="대표팀 기준 국적을 입력"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            포지션
+          </td>
+          <td>
+            <select name="position">
+            <optgroup label="공격수">
+              <option>센터포워드</option>
+              <option>쉐도우스트라이커</option>
+              <option>좌측윙포워드</option>
+              <option>우측윙포워드</option>
+            <optgroup>
+            <optgroup label="미드필더">
+              <option>수비형미드필더</option>
+              <option>중앙미드필더</option>
+              <option>공격형미드필더</option>
+              <option>좌측윙어</option>
+              <option>우측윙어</option>
+            <optgroup>
+            <optgroup label="수비수">
+              <option>센터백</option>
+              <option>풀백</option>
+              <option>윙백</option>
+              <option>스위퍼</option>
+            <optgroup>
+            <optgroup label="골키퍼">
+              <option>골키퍼</option>
+              <option>스위퍼 골키퍼</option>
+            <optgroup>
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            발사이즈
+          </td>
+          <td>
+            <select name="footsize" size="4">
+              <option value="330">330</option>
+              <option value="325">325</option>
+              <option value="320">320</option>
+              <option value="315">315</option>
+              <option value="310">310</option>
+              <option value="305">305</option>
+              <option value="300">300</option>
+              <option value="295">295</option>
+              <option value="290">290</option>
+              <option value="285">285</option>
+              <option value="280">280</option>
+              <option value="275">275</option>
+              <option value="270">270</option>
+              <option value="265">265</option>
+              <option value="260">260</option>
+              <option value="255">255</option>
+              <option value="250">250</option>
+              <option value="245">245</option>
+              <option value="240">240</option>
+              <option value="235">235</option>
+              <option value="230">230</option>
+              <option value="225">225</option>
+              <option value="220">220</option>
+              <option value="215">215</option>
+              <option value="210">210</option>
+              <option value="205">205</option>
+              <option value="200">200</option>
+              <option value="195">195</option>
+              <option value="190">190</option>
+              <option value="185">185</option>
+              <option value="180">180</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            축구화 선호 색상
+          </td>
+          <td>
+            <input type="color" name="color" id="color"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            즐겨듣는 헤드폰 음량
+          </td>
+          <td>
+            <input type="range" name="volumn" step="10" min="0" max="100"/><br/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            선수로서의 포부
+          </td>
+          <td>
+            <textarea rows="5" cols="50" name="content" id="content" placeholder="선수로서의 포부"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="선수등록">
+            <input type="reset" value="다시입력"/>
+          </td>
+        </tr>
+      </table>
+      <hr/>
+      <table bgcolor="black">
+        <tr>
+          <td>
+            프리미어리그 엔트리 현황 : <meter value="21" min="0" max="25">
+          </td>
+        </tr>
+        <p>
+          <tr>
+            <td>
+              선수등록 47초 경과(100초기준) : <progress value="47" max="100"></progress><br/>
+            </td>
+          </tr>
+        </p>
+      </table> 
+    </form>
+  </body>
+</html>

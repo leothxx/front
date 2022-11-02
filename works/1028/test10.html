@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test10.html</title>
+  <style>
+    li {
+      list-style: none;
+    }
+    /* ol > li { */
+    /* ol li{ */
+    ol li,h1 { /*or개념*/  
+      background-color: brown;
+    }
+    /*
+    ul > li {
+      background-color: blueviolet;
+    }
+    */
+    ol > li > ul > li {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <h2>선택자(자식/자손)</h2> <!-- 자식과 자손을 쉼표로 구분하여 여러개를 한번에 줄 줄 알아야함 -->
+  <h2>길동이가 좋아하는 음식 Best 5</h2>
+  <ol>
+    <li>짜장면</li> <!-- 자식 -->
+    <li>찐빵</li>
+    <li>과일
+      <ul>
+        <li>사과</li> <!-- 자손 -->
+        <li>배</li>
+        <li>바나나</li>
+      </ul>
+    </li>
+    <li>초콜렛</li>
+    <li>피자</li>
+  </ol>
+</body>
+</html>

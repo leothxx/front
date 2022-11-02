@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test8.html</title>
+  <style>
+    /*이곳은 스타일시트 주석입니다.*/
+    /*클래스 선택자(class)*/
+    h2 {
+      background-color: yellow;
+    }
+    div {
+      background-color: blueviolet;
+    }
+    span {
+      background-color: brown;
+    }
+    #cont1 { /* 이름을 지정하면 순서와 관계없음. div위로 올려도 cont1은 레드컬러 고정임 */
+      background-color: red;
+    }
+    .cont2 {
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <!--이곳은 html 주석입니다.-->
+  <h2>선택자(selector) 연습</h2>
+  <p>a. p태그 선택자</p>
+  1.이곳은 일반영역입니다.<br/>
+  2.이곳은 일반영역입니다.<br/>
+  <p>b. p태그 선택자</p>
+  <div>3.이곳은 div태그 영역입니다.</div>
+  <div id="cont1">4.이곳은 div태그 영역입니다.</div> <!-- 본문에 한번만 나올 수 있다 id -->
+  <span>5.이곳은 span태그 영역입니다.</span>
+  <span class="cont2">6.이곳은 span태그 영역입니다.</span> <!-- 본문에 여러번 나올 수 있다 class -->
+  7.이곳은 일반영역입니다.<br/>
+  <p>8.셀렉터 연습</p>
+</body>
+</html>

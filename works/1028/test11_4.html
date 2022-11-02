@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test10.html</title>
+  <style>
+    /* 동등선택자 : 쉼표(,)로 구분한다. */
+    ol, ul {
+      background-color: violet;
+    }
+    .fruit {
+      background-color: green;
+      color: white;
+    }
+    #apple {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>선택자(자식/자손)</h2> <!-- 자식과 자손을 쉼표로 구분하여 여러개를 한번에 줄 줄 알아야함 -->
+  <h2>길동이가 좋아하는 음식 Best 5</h2>
+  <ol>
+    <li>짜장면</li> <!-- 자식 -->
+    <li>찐빵</li>
+    <li>과일
+      <ul class="fruit">
+        <li>사과</li> <!-- 자손 -->
+        <li>배</li>
+        <li>바나나</li>
+      </ul>
+    </li>
+    <li>초콜렛</li>
+    <li>피자</li>
+  </ol>
+  <hr/>
+  <h2>길동이가 좋아하는 음식 5가지</h2>
+  <ul>
+    <li>짜장면</li> <!-- 자식 -->
+    <li>찐빵</li>
+    <li>과일
+      <ol class="fruit">
+        <li>사과
+          <ul id="apple">
+            <li>홍옥</li>
+            <li>국광</li>
+          </ul>
+        </li> <!-- 자손 -->
+        <li>배</li>
+        <li>바나나</li>
+      </ol>
+    </li>
+    <li>초콜렛</li>
+    <li>피자</li>
+  </ul>
+  <hr/>
+</body>
+</html>

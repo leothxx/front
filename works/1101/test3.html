@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3.html</title>
+  <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      margin: 10px;
+      color: #000;
+    }
+    .container {
+      height: 100vh; /* 전체 크기를 다 쓰겠다는 의미 view port 100% 사용 */
+      display: flex; /* Flex Box를 사용하겠다는 선언문 */
+      /* flex-direction: row; */ /* flex Box의 배치(기본-행(row)), (열방향(column)), (역방향 행(row-revers)), (역방향 열(column-reverse)) */
+      flex-flow: row nowrap; /* 컨테이너의 아이템들을 한줄에 담을 수 없을때 nowrap줄이 바뀌지 않는다. wrap은 줄이 바뀐다. (역방향은 -revers)*/
+          /* flex-direction: row; flex-wrap:wrap; 을 한줄로 쓴게 flex-flow 위임.*/
+
+      /* 수평정렬(justify-content) */
+      justify-content: flex-start; /* flex-start = 시작위치를 기준으로 정렬하겠다. (왼쪽) */   
+      /* justify-content: flex-end; flex-end = 맨뒤를 기준으로 정렬하겠다. (오른쪽) */
+      /* justify-content: center; 가운데로 정렬 (중앙) */
+      /* justify-content: space-between; 오와열 (일정한 간격) */
+      /* justify-content: space-around; 시작간격과 마지막 간격을 합친 것이 '주 간격' */
+
+      /* 수직정렬(align-item) */
+      align-items: flex-start; /* 시작기준정렬(위쪽 정렬) */
+      /* align-items: flex-end; */ /* 마지막 기준정렬(아래쪽정렬) */
+      /* align-items: center; */ /* 수직 중앙정렬 */
+
+      /* 여러행정렬(align-content) : 'flex-wrap:wrap'일 경우 + 행이 2행 이상 있을시 '수직 축방향 정렬' */
+      align-content: flex-start;
+      /* align-content: flex-end; */
+      /* align-content: center; */
+
+    }
+
+    /* Flex 아이템에 적용하는 속성들 */
+    /* 모든 아이템에 적용시 */
+    .item {
+      flex-basis: auto; /* 자동으로 크기 조절 */
+      /* flex-basis: 0; */ /* 한글자 크기 정도로 모두를 맞춰준다. */
+      /* flex-basis: 30%; */ /* 전체행의 기준(100%)으로 30%크기로 보여준다. */
+      /* flex-basis: 200px; */ /* 각각의 아이템을 200px크기로 보여준다. */
+    }
+    /* 부분적으로 특정 아이템의 크기 조절 */
+    .item:nth-child(1) { /* 첫번째꺼를 지정할것임. */
+      /* flex-grow: 1; */
+      flex-shrink: 1;
+    }
+    .item:nth-child(2) { /* 두번째꺼를 지정할것임. */
+      /* flex-grow: 2; */
+      flex-shrink: 2;
+    }
+    .item:nth-child(3) { /* 세번째꺼를 지정할것임. */
+      /* flex-grow: 1; */
+      flex-shrink: 1;
+    }
+    .item:nth-child(4) { /* 네번째꺼를 지정할것임. */
+      /* flex-grow: 2; 두배 */
+      flex-shrink: 2; /* 두배 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    Flex(플렉스)는 Felexible Box, FlexBox 라고 부름
+    주로 레이아웃 배치 전용으로 고안됨.
+    float와 inline-Block등의 불편한 점을 보완함.
+  -->
+  <div class="container"> <!-- '플렉스 컨테이너'라고 부른다. -->
+    <div class="item" style="background-color:#2274ff">1.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#ff7490">2.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#7422ff">3.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#522462">4.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#9675c9">5.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#f25f9b">6.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#69cfe5">7.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:coral">8.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:bisque">9.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color:#ffc145">10.안녕하세요</div> <!-- '플렉스 아이템'이라고 부른다. -->
+  </div>
+</body>
+</html>

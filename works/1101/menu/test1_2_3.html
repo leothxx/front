@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test1.html(풀다운 메뉴만들기[hover방식 pc전용])</title>
+  <style>
+    /* 기본 css reset 설정하기 */
+    body, ul, li {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+    /* 앵커태그 설정 */
+    a {
+      text-decoration: inherit; /* 부모에게 상속받은 값 그대로 이용함. */
+      color: inherit; /* 상속받아 사용하겠다. */
+    }
+    /* 주메뉴 설정 작업 처리 */
+    nav {
+      text-align: center;
+    }
+    nav ul {
+      background-color: #dfdfdf;
+      border-radius: 10px;
+    }
+    nav > ul { /* nav태그 안에 ul에서만 주겠다고 명확하게 줘야 메뉴에만 속성이 들어감. */
+      /* background-color: #dfdfdf;  주메뉴와 하위메뉴를 똑같이 위에서 지정했기에 주석함*/
+      display: inline-block;
+      border-radius: 10px;
+    }
+    nav > ul > li { /* 인라인 블록 속성으로 변경하여 메뉴를 가로로 */
+      display: inline-block;
+      width: 110px;
+    }
+    /* nav > ul > li > a { */
+    nav li > a {
+      /* 앵커는 블록으로 지정함. */
+      display: block; /* 전부 인라인 블록으로 줘야지만, 글자가 아닌 영역에 마우스 커서를 갖다대도 커서가 변함 */
+      padding: 10px;
+    }
+
+    /* nav > ul > li:hover > a { */
+    nav li:hover > a {
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+    }
+    nav li {
+      position: relative; /* 앞 내용과 별 내용이 없지만 앱솔루트의 기본 위치부터 출발하라고 지정해야함. */
+    }
+    /* 서브 메뉴 만들기 */
+    nav ul ul {
+      position: absolute;
+      display: none; /* 가리기 */
+      width: 110px;
+    }
+    nav li:hover > ul {
+      display: block; /* 세로로 나오게 하기 위해 블록으로. */
+    }
+  </style>
+</head>
+<body>
+  <nav> <!-- 메뉴는 시맨틱스태그 nav-->
+    <ul>
+      <li><a href="#"">회원관리</a>
+        <ul>
+          <li><a href="#">서브메뉴 1</a></li>
+          <li><a href="#">서브메뉴 2</a></li>
+          <li><a href="#">서브메뉴 3</a></li>
+          <li><a href="#">서브메뉴 4</a></li>
+        </ul>
+      </li>
+      <li><a href="#"">상품관리</a>
+        <ul>
+          <li><a href="#">서브메뉴 1</a></li>
+          <li><a href="#">서브메뉴 2</a></li>
+          <li><a href="#">서브메뉴 3</a></li>
+          <li><a href="#">서브메뉴 4</a></li>
+        </ul>
+      </li>
+      <li><a href="#"">주문관리</a>
+        <ul>
+          <li><a href="#">서브메뉴 1</a></li>
+          <li><a href="#">서브메뉴 2</a></li>
+          <li><a href="#">서브메뉴 3</a></li>
+          <li><a href="#">서브메뉴 4</a></li>
+        </ul>
+      </li>
+      <li><a href="#"">배송관리</a>
+        <ul>
+          <li><a href="#">서브메뉴 1</a></li>
+          <li><a href="#">서브메뉴 2</a></li>
+          <li><a href="#">서브메뉴 3</a></li>
+          <li><a href="#">서브메뉴 4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

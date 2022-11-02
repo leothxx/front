@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        div {
+            font-size: 3px;
+            color: black;
+        }
+        #loginkey {
+            font-size: 12px;
+            color: gray;
+        }
+        .btn {
+            background-color: black;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        a:hover{ /*갖다댄 순간*/    
+        color: chocolate;
+        text-decoration: underline;
+        }
+        .signup {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>LOGIN</div>
+    <br/><br/>
+    <form action="login.html">
+        <table align="left">
+            <tr>
+                <td><div id="loginkey">ID</div></td>
+            </tr>
+            <tr>
+                <td><div><input type="text" name="mid" id="mid" size="20px" maxlength="12" placeholder="아이디" autofocus/></div></td>
+            </tr>
+            <tr>
+                <td><div id="loginkey">PASSWORD</div></td>
+            </tr>
+            <tr>
+                <td><div><input type="password" name="pwd" id="pwd" size="20px" maxlength="14" placeholder="비밀번호"/></div></td>
+            </tr>
+            <tr>
+                <td><br/></td>
+            </tr>
+            <tr>
+                <td><div><input type="button" value="Log in" class="btn"></div></td>
+            </tr>
+            <tr>
+                <td><div><a href="signup.html" class="signup"><font size="2px">· sign up</font></a></div></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
