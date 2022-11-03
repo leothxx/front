@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 연습1</title>
+  <script>
+    'use strict';
+    let hobby = '';
+    function fCheck() {
+      if(document.getElementById("hobby1").checked) {
+        hobby += document.getElementById("hobby1").value + "/";
+      }
+      if(document.getElementById("hobby2").checked) {
+        hobby += document.getElementById("hobby2").value + "/";
+      }
+      if(document.getElementById("hobby3").checked) {
+        hobby += document.getElementById("hobby3").value + "/";
+      }
+      if(document.getElementById("hobby4").checked) {
+        hobby += document.getElementById("hobby4").value + "/";
+      }
+      if(document.getElementById("hobby5").checked) {
+        hobby += document.getElementById("hobby5").value + "/";
+      }
+      demo.innerHTML = hobby + " <input type='button' value='지우기' onclick='fClear()'/>";
+    }
+    function fClear() {
+      document.getElementById("hobby1").checked = false;
+      document.getElementById("hobby2").checked = false;
+      document.getElementById("hobby3").checked = false;
+      document.getElementById("hobby4").checked = false;
+      document.getElementById("hobby5").checked = false;
+      demo.innerText = "";
+    }
+  </script>
+</head>
+<body>
+  <h2>체크박스 연습</h2>
+  <form name="myform">
+    <p><b>취미 : </b>
+      <input type="checkbox" name="hobby" id="hobby1" value="축구"/>축구 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby2" value="패션"/>패션 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby3" value="여행"/>여행 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby4" value="사진"/>사진 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby5" value="싸이클"/>싸이클 &nbsp;
+      <button type="button" onclick="fCheck()">출력</button>
+    </p>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>

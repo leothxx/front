@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뒷 문자 1개씩 지우기</title>
+  <script>
+    'use strict';
+    let t='';
+    function input() {
+      t = document.getElementById("str").value;
+      demo.innerText = t;
+    }
+    function bs() {
+      t = t.substring(0,t.length-1);
+      document.getElementById("str").value = t;
+      demo.innerText = t;
+    }
+  </script>
+</head>
+<body>
+  <h2>뒷 문자를 차례로 1개씩 지우기</h2>
+  <form name="myform">
+    <div>
+      문자입력 :
+      <input type="text" name="str" id="str" placeholder="문자를 입력하세요"/>
+      <input type="button" value="enter" onclick="input()"/>
+      <input type="button" value="BS" onclick="bs()"/>
+    </div>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>

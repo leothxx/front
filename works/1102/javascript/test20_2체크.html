@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 연습1_2 (for문사용)</title>
+</head>
+<body>
+  <h2>체크박스 연습</h2>
+  <form name="myform">
+    <p><b>취미 : </b>
+      <input type="checkbox" name="hobby" id="hobby1" value="축구"/>축구 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby2" value="패션"/>패션 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby3" value="여행"/>여행 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby4" value="사진"/>사진 &nbsp;
+      <input type="checkbox" name="hobby" id="hobby5" value="싸이클"/>싸이클 &nbsp;
+      <button type="button" onclick="fCheck()">출력</button>
+    </p>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+  <script>
+    'use strict';
+    let hobbyCount = document.getElementsByName("hobby").length; /* 순서가 위에서 아래로 내려가기에, 카운터 숫자가 아래 본문을 읽기 전에 length를 가져와서, 값이 0이 나옴. */
+    function fCheck() {
+      let hobby = '';
+      for(let i=0; i<hobbyCount; i++){
+        if(document.getElementsByName("hobby")[i].checked) {
+          hobby += document.getElementsByName("hobby")[i].value + "/";
+        }
+      }
+      hobby = hobby.substring(0,hobby.length-1);
+      demo.innerHTML = hobby + " <input type='button' value='지우기' onclick='fClear()'/>";
+    }
+    function fClear() {
+      // let hobbyCount = document.getElementsByName("hobby").length;
+      for(let i=0; i<hobbyCount; i++){
+        document.getElementsByName("hobby")[i].checked = false;
+      }
+      demo.innerText = "";
+    }
+  </script>
+</body>
+</html>

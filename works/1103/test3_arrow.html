@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function(java의 람다식표현)</title> <!-- java의 람다식 표현을, 프론트에선 화살표 표현방식이라고 함.-->
+  <script> 
+    'use strict';
+    let fCheck0 = function() {
+      alert("익명 함수를 호출하셨습니다.");
+    }
+    let fCheck1 = () => { //function을 지우고 ()괄호 뒤에 =>을 준게 arrow function임.
+      alert("Arrow 함수를 호출하셨습니다.")
+    }
+    let fCheck2 = () => alert("Arrow 함수를 호출하셨습니당당구리.");
+  </script>
+</head>
+<body>
+  <h2>Arrow Function</h2>
+  <p>
+    <input type="button" value="익명함수 호출" onclick="fCheck0()"/>
+    <input type="button" value="Arrow함수 호출1" onclick="fCheck1()"/>
+    <input type="button" value="Arrow함수 호출2" onclick="fCheck2()"/>
+  </p>
+</body>
+</html>

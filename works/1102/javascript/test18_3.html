@@ -10,15 +10,10 @@
     function fCheck() {
       let gender;
       let color;
-      // if(document.getElementById("gender1").value == "男"){
-      //   gender = "男";
-      // }
-      // if(document.getElementById("gender2").value == "女") {
-      //   gender = "女";
-      // } 값을 비교하는게 아니라 check 여부를 비교해야함 .. ㅎㅎㅎ..
-      if(document.getElementById("gender1").checked) gender="男";
-      if(document.getElementById("gender2").checked) gender="女"; /* 같은 name의 값은 순서대로 배열에 들어있음. */
-      // demo.innerText = gender;
+
+      if(document.getElementsByName("gender")[0].checked) gender="男";
+      if(document.getElementsByName("gender")[1].checked) gender="女";
+      
       if(gender == "男") {
         color = "#aaa";
       }
