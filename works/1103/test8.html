@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    let regMid = /[a-zA-Z_]/g; //아이디는 영문 소문자, 대문자, 숫자, _만 허용함.
+    let regName = /[가-힣a-zA-Z]/g; //성명은 한글 혹은 영문만 허용 길이는 2~20자까지
+    let regTel = /[]/g; //전화번호 형식에 맞도록 체크(지역번호-국번-전화번호)
+    let regEmail = /[]/g; //이메일 형식에 맞도록 체크(영문, @, . (골뱅이 앞에 점이 나오면 안됨.))
+  </script>
+</body>
+</html>
