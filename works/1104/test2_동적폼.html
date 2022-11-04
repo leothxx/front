@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동적 폼 만들기</title>
+  <script>
+    'use strict';
+
+    // 1.입력폼 1개 추가하기
+    /*
+    function inputBox() {
+      let newText = '<input type="text" name="product" id="product" />'; //안쪽이 큰 따옴표이기에 바깥쪽을 작은 따옴표를 사용
+      demo.innerHTML = newText;
+    }
+    */
+    let newText = ""; //누적을 위한 전역변수로 선언
+    // 2.클릭할때마다 입력폼 추가하기.
+    /*
+    function inputBox() {
+      newText +=  '<input type="text" name="product" id="product" /><br/>';
+      demo.innerHTML = newText;
+    }
+    */
+
+    // 3.클릭할때마다 입력폼 추가하기('지우기'버튼 추가).
+    let idx = 0;
+    /*
+    function inputBox() {
+      idx++;
+      newText +=  idx +". "+ '<input type="text" name="product" id="product" /> &nbsp;';
+      newText += "<input type='button' value='"+idx+". 지우기' onclick='deleteBox()'/><br/>";
+      demo.innerHTML = newText;
+    }
+    */
+    
+    /*
+    // 4.클릭할때마다 입력폼 추가하기('지우기'버튼 추가) : 각 TextField마다 고유한 id를 지정한다.
+    function inputBox() {
+      idx++;
+      newText += '<div id="proTxt'+idx+'">'; //하나의 줄을 삭제하기 위해, div로 덮어씌우고 div에 고유번호의 id를 줌.
+        newText +=  idx +". "+ '<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
+        newText += "<input type='button' value='"+idx+". 지우기' onclick='deleteBox("+idx+")'/><br/>";
+        newText += '</div>'; //하나의 줄의 끝맺음.
+      demo.innerHTML = newText;
+    }
+    */
+
+      // 삭제버튼 클릭시 동적텍스트박스 삭제하기
+      function deleteBox(idx) {
+      let proTxt = "proTxt" + idx;
+      let item = document.getElementById(proTxt); // proTxt에 따옴표가 없다는 건, 변수명이라는 것임. 폼태그의 아이디가 올때는 ""가 있다.
+      item.parentNode.removeChild(item); //내가 지칭하고 있는 나의 부모에서 자식(나)를 지워라.
+    }
+
+    // 5.클릭할때마다 입력폼 추가하기('지우기'버튼 추가) : 각 TextField마다 고유한 id를 지정한다.
+    function inputBox() {
+      idx++;
+      newText = '<div id="proTxt'+idx+'">'; //하나의 줄을 삭제하기 위해, div로 덮어씌우고 div에 고유번호의 id를 줌.
+        newText +=  idx +". "+ '<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
+        newText += "<input type='button' value='"+idx+". 지우기' onclick='deleteBox("+idx+")'/><br/>";
+        newText += '</div>'; //하나의 줄의 끝맺음.
+      demo.innerHTML += newText;
+    }
+
+
+    function reloadCheck() {
+      idx = "";
+      location.reload();
+    }
+
+  </script>
+</head>
+<body>
+  <h2>입력창 추가(동적폼)</h2>
+  <form name="myform">
+    <p>
+      <input type="button" value="입력창 추가" onclick="inputBox()"/>
+      <input type="button" value="입력창 모두제거" onclick="reloadCheck()"/> <!-- location 안에 리로드는 새로고침임. href은 이동-->
+    </p>
+    <div id="demo"></div> <!-- 동적 폼을 만들땐 무조건 폼 안에 위치해야함. 폼 밖에 위치하면 동적폼 불가.-->
+  </form>
+</body>
+</html>

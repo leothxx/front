@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주민번호 생성기(체크기)</title>
+  <script>
+    'use strict';
+
+    function juCheck() {
+      let jumin1 = document.getElementById("jumin1").value;
+      if(jumin1.length == 6){
+        if(isNaN(jumin1)) { //isNaN은 숫자인지 아닌지를 확인함. 숫자가 아니면!?
+          alert("숫자만 입력하세요.");
+          document.getElementById("jumin1").select(); //전체를 선택해줌. 
+          document.getElementById("jumin1").focus(); //커서를 주민1 자리로 보내기.
+        }
+        else {
+          document.getElementById("jumin2").focus(); //주민 2번으로 커서를 보냄.
+        }
+      }
+    }
+
+    function juminCheck() {
+      let jumin1 = document.getElementById("jumin1").value;
+      let jumin2 = document.getElementById("jumin2").value;
+      if(jumin1.trim() == "" || jumin2.trim() == "" || jumin1.length != 6 || jumin2.length !=7) {
+        alert("주민번호를 정확히 입력하세요!!!");
+        document.getElementById("jumin1").focus();
+      }
+      else if(isNaN(jumin1) || isNaN(jumin2)) {
+        alert("주민번호는 숫자만 입력하세요!!!");
+        document.getElementById("jumin1").focus();
+      }
+      else { //주민번호 체크디짓(check digit) 체크 - 주민번호 마지막자리 체크
+        const check = [2,3,4,5,6,7,8,9,2,3,4,5];
+        let jumin = jumin1 + jumin2; //주민번호 13자리가 붙음.
+
+        let tot = 0; //누적
+        for(let i=0; i<check.length; i++){
+          tot += check[i]*jumin.charAt(i); //한자리씩 빼기. 곱하고 더하는거까지 끝남.
+        }
+        let na = tot % 11; //나머지는 합 을 11로 나눈 나머지.
+        let checkDigit = 11 - na;
+
+        if(checkDigit > 9){ //체크디짓이 10이면, 10을 10으로 나눈 나머지를 받음.
+          checkDigit = checkDigit % 10;
+        }
+        let res = "<font color='red'><b>";
+        if(checkDigit == jumin.substring(jumin.length-1)) {
+          res += "주민번호가 일치합니다. 간첩이 아니시군뇨...";
+        }
+        else {
+          res += "주민번호가 일치하지 않습니다. 혹사 간첩~~~~?";
+        }
+        res += "</b></font>";
+        document.getElementById("demo").innerHTML = res;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>주민번호 체크</h2>
+  <p>
+    주민번호 :
+    <input type="text" name="jumin1" id="jumin1" size="6" onkeyup="juCheck()" maxlength="6" autofocus required/> -  <!-- 생년월일의 최대 수는 6이며, 오토포커스와 필수입력을 준다.-->
+    <input type="password" name="jumin2" id="jumin2" size="7" maxlength="7" required/>
+    <input type="button" value="주민번호체크" onclick="juminCheck()"/>
+    <input type="reset" value="다시입력"/>
+  </p>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>
