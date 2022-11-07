@@ -19,28 +19,22 @@
       if(hh < 10) hh = 0 + hh;
       let hh1 = hh.substring(0,1); 
       let hh2 = hh.substring(1,2);
-      for(let i=0; i<=9; i++){
-        if(hh1 == i) hh1="<img src='../../images/button/"+i+".png'/>";
-        if(hh2 == i) hh2="<img src='../../images/button/"+i+".png'/>";
-      }
+      hh1="<img src='../../images/button/"+hh1+".png'/>";
+      hh2="<img src='../../images/button/"+hh2+".png'/>";
       hh = hh1 + hh2;
       let mm = today.getMinutes()+""; // 분 추출
       if(mm < 10) mm = 0 + mm;
       let mm1 = mm.substring(0,1); 
       let mm2 = mm.substring(1,2);
-      for(let i=0; i<=9; i++){
-        if(mm1 == i) mm1="<img src='../../images/button/"+i+".png'/>";
-        if(mm2 == i) mm2="<img src='../../images/button/"+i+".png'/>";
-      }
+      mm1="<img src='../../images/button/"+mm1+".png'/>";
+      mm2="<img src='../../images/button/"+mm2+".png'/>";
       mm = mm1 + mm2;
       let ss = today.getSeconds()+""; // 초 추출
       if(ss < 10) ss = 0 + ss;
       let ss1 = ss.substring(0,1); 
       let ss2 = ss.substring(1,2);
-      for(let i=0; i<=9; i++){
-        if(ss1 == i) ss1="<img src='../../images/button/"+i+".png'/>";
-        if(ss2 == i) ss2="<img src='../../images/button/"+i+".png'/>";
-      }
+      ss1="<img src='../../images/button/"+ss1+".png'/>";
+      ss2="<img src='../../images/button/"+ss2+".png'/>";
       ss = ss1 + ss2;
       demo.innerHTML = hh + " <b>:</b> " + mm + " <b>:</b> " + ss;
     }
