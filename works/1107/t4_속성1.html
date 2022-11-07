@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성연습</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    function font32() {
+      document.getElementById("demo").style.fontSize='2em';
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>inLine 명령을 통한 글자 속성 변경</h2>
+    <p>
+      <button type="button" onclick="font32()" class="btn btn-danger">글꼴2em(32px)</button>
+      <button type="button" onclick="document.getElementById('demo').style.fontSize='1em';" class="btn btn-success">글꼴1em(16px)</button> <!-- 간단한 명령은 안쪽에서 수행하는게 훨씬 간단하다. onclick 안에-->
+      <button type="button" onclick="document.getElementById('demo').style.fontSize='0.5em';" class="btn btn-danger">글꼴0.5em(8px)</button>
+      
+    </p>
+    <hr/>
+    <div id="demo">자바스크립트 명령으로 글자 크기를 변경합니다.</div>
+  </div>
+  <p><br/></p>
+</body>
+</html>

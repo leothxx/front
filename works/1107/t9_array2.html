@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열연습2</title>
+  <script>
+    'use strict';
+    let arr1 = [10,8,20,15,11,17];
+
+    // 정렬 : sort() : 문자형식으로 정렬함. (정확한 정렬을 위해선 한자리수는 0을 치환하여 정렬해야함.)
+    let arr2 = arr1.sort();
+    console.log("1. 오름차순 정렬 : "+arr2);
+    
+    // 역순 정렬 : reverse() : 문자열 형식으로 내림차순 정렬한다.
+    let arr3 = arr1.reverse();
+    console.log("2. 내림차순 정렬 : "+arr3);
+    
+    // 최대/최소값 구하기
+    let maxValue = Math.max(10,8,20,15,11,17);
+    console.log("3. 최대 값 : "+maxValue);
+    
+    let minValue = Math.min(10,8,20,15,11,17);
+    console.log("4. 최소 값 : "+minValue);
+    
+    // 배열안에서의 최대값/ 최소값을 구하기
+    maxValue = Math.max(...arr3); //열거형으로 들어가있는 것을 배열로 인식해서 꺼내주는 연산자를 사용해야함. 그 연산자가 ... 임 java에도 있음.
+    console.log("5. 최대 값 : "+maxValue);
+    
+    minValue = Math.min(...arr3); //열거형으로 들어가있는 것을 배열로 인식해서 꺼내주는 연산자를 사용해야함. 그 연산자가 ... 임 java에도 있음.
+    console.log("6. 최소 값 : "+minValue);
+
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <hr/>
+    <h2>배열연습2</h2>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+  <p><br/></p>
+</body>
+</html>

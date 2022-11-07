@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 사이트 만들기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body, ul, li {
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            list-style: none;
+        }
+        tr {height: 80px;}
+        #area {
+            width: 800px;
+            height: 1000px;
+            margin: 0 auto;
+            padding: 0px;
+            background-color: moccasin;
+            
+        }
+        #subarea {
+            width: 700px;
+            height: 900px;
+            border-radius: 30px;
+            padding: 0px;
+            background-color: tomato;
+            
+        }
+        #logoImg {
+            width: 150px;
+            height : 100px;
+            margin-top: 10px;
+        }
+        #id {font-size: 1.5em;}
+        #profile {
+            font-size: 1.0em;
+            margin-top: -10px;
+        }
+        input[type="button"] {
+            width: 650px;
+            height: 50px;
+            font-size: 1.5em;
+            background-color: oldlace;
+            border-style: none;
+            border-radius: 20px;
+        }
+        input[type="button"]:hover {
+            font-size: 1.5em;
+            background-color: #ccc;
+            border-radius: 20px;    
+            cursor: pointer;   
+        }
+        ul li > a {
+            display: none;
+            position: relative;
+            background-color: darksalmon;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 5px auto;
+            width: 450px;    
+            color: white;
+            font-size: 1.3em;
+        }
+        ul li:hover ul li > a{
+            display: block;
+        }
+
+        /* 반응형 웹페이지 적용 (최소 width 501 ~ 최대 800) */
+        @media screen and (min-width:501px) and (max-width:800px) {
+            tr {height: 50px;}
+            #area {
+                width: 600px;
+                height: 800px;
+            }
+            #subarea {
+                width: 400px;
+                height: 600px;
+                border-radius: 20px;
+            }
+            #logoImg {
+                width: 100px;
+                height : 70px;
+            }
+            #id {font-size: 1.2em;}
+            #profile {font-size: 0.8em;}
+            input[type="button"] {
+                width: 450px;
+                font-size: 1.2em;
+                border-radius: 15px;
+            }
+            input[type="button"]:hover {
+                font-size: 1.2em;
+                border-radius: 15px;    
+            }
+            ul li > a {
+                border-radius: 15px;
+                width: 300px;    
+                font-size: 1em;
+            }
+        }
+
+        /* 반응형 웹페이지 적용 (최대 width 500px까지) */
+        @media screen and (max-width:500px) {
+            tr {height: 30px;}
+            #area {
+                width: 300px;
+                height: 400px;
+            }
+            #subarea {
+                width: 200px;
+                height: 300px;
+                border-radius: 10px;
+            }
+            #logoImg {
+                width: 50px;
+                height : 35px;
+            }
+            #id {font-size: 0.8em;}
+            #profile {font-size: 0.5em;}
+            input[type="button"] {
+                width: 225px;
+                font-size: 0.8em;
+                border-radius: 10px;
+            }
+            input[type="button"]:hover {
+                font-size: 0.8em;
+                border-radius: 10px;    
+            }
+            ul li > a {
+                border-radius: 10px;
+                width: 150px;    
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table id="area">
+        <tr>
+            <td>
+                <table id="subarea" align="center">
+                    <tr>
+                        <td><div><img src="../../images/homme/4.jpg" id="logoImg" class="rounded-circle"/></div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="id"><b>leothx_x</b></div>
+                            <br/><div id="profile">IT, 패션, 여행, 일상</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btn">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <input type="button" name="btn1" id="btn1" value="블로그"/>
+                                            <ul>
+                                                <li><a href="http://blog.naver.com/shn2769" target="_blank">일상 블로그</a></li>       
+                                                <li><a href="http://leothx-x.tistory.com" target="_blank">개발 블로그</a></li>       
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="btn">
+                                    <ul>
+                                        <li>
+                                            <input type="button" name="btn2" id="btn2" value="인스타그램"/>
+                                            <ul>
+                                                <li><a href="http://instagram.com/leothx_x" target="_blank">일상 계정</a></li>  
+                                                <li><a href="http://instagram.com/leothx_bike" target="_blank">운동 계정</a></li>  
+                                                <li><a href="http://instagram.com/kor._leoxx" target="_blank">비공개 계정</a></li>  
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>    
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="btn"><input type="button" name="btn" id="btn" value="Github" onclick="window.open('about:blank').location.href='https://github.com/leothxx'"/></div></td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </table>
+            </td>    
+        </tr>
+    </table>
+</body>
+</html>

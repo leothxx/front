@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class(객체) 선언/사용예제</title>
+  <script>
+    'use strict';
+
+    //클래스 만들기
+    // getter setter는 값을 읽어오는 목적이 주 목적인데, 두번째 목적으로는 유효성 검사이다.
+    class Member { //필드, 생성자, 메소드
+      // 필드명(getter와 setter을 통해서 값의 처리때는 필드를 선언하지 않는다.)
+      //name; //필드명 [javascript에서는 getter setter를 사용한다면, 필드를 선언 X, 선언하게되면 getter setter가 없이 필드로 바로 접근이 가능하기 때문]
+      //age;
+
+      //생성자
+      // constructor(name,age){
+      constructor(name,age,color){
+        this.name = name;
+        this.age = age;
+        this.color = color;
+      }
+
+      // getters 생성
+      get name(){
+        return this._name;
+      }
+      get age(){
+        return this._age;
+      }
+      get color() {
+        return this._color;
+      }
+
+      set name(name) {
+        this._name = name;
+      }
+      set age(age) {
+        // this._age = age;
+        // this._age = (age < 1) ? 1 : age;
+        this._age = (age < 1) ? age * (-1) : age; //입력받은 나이가 1살보다 작으면? 나이 * -1을 하여 age에 받는다.
+      }
+      set color(color) {
+        this._color = (color == '껌정' || color == '블랙' || color == '흑색' || color == '까망' || color == '깜정')? '검정' : color; // 혹은 if문 사용 가능
+      }
+    }
+    
+    let member = new Member('홍길동',25,'빨강');
+    console.log("성명 : " +member.name);
+    console.log("나이 : " +member.age);
+    console.log("좋아하는색 : " +member.color);
+    
+    let member2 = new Member('김말숙',-25,'껌정'); //음수의 나이를 양수의 나이로 유효성 검사해야함. setter 보완 필요
+    console.log("성명 : " +member2.name);
+    console.log("나이 : " +member2.age);
+    console.log("좋아하는색 : " +member2.color);
+    </script>
+</head>
+<body>
+  <h2>클래스 연습 (java처럼)</h2> 
+</body>
+</html>

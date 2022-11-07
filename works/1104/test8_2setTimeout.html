@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeOut</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let num = 0;
+
+    function plus() {
+      num ++;
+      demo.innerHTML = "1증가";
+      setInterval(1000); //1000분의 1초니까 1000을 넣어야 1초임. 500을 넣으면 0.5초 
+      demo.innerHTML = "<b>"+ num +"</b>";
+    }
+    function minus() {
+      num --;
+      demo.innerHTML = "1감소"
+      setInterval(1000);
+      demo.innerHTML = "<b>"+ num +"</b>";
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>setTimeout 함수</h2>
+    <p>
+      <input type="button" value="증가" onclick="plus()" class="btn btn-primary"/>
+      <input type="button" value="감소" onclick="minus()" class="btn btn-warning"/>
+      <input type="button" value="정지" onclick="stop()" class="btn btn-danger"/>
+    </p>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+  <p><br/></p>
+</body>
+</html>

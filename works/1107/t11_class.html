@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class(객체) 선언/사용예제</title>
+  <script>
+    'use strict';
+
+    //클래스 만들기
+    // PublicKeyCredential <<- 퍼블릭임.
+    class Member { //필드, 생성자, 메소드
+
+      // 필드명
+      name; //java에서는 타입을 넣어야하지만, javascript에선 필드를 선언할때 타입을 작성하지 않음.
+      age;
+
+      //생성자
+      // constructor(){};
+      constructor(name, age){
+        this.name = name;
+        this.age = age;
+      };
+
+      // 메소드
+      memberPrint() {
+        document.write("성명 : " + this.name + ", 나이 : " +this.age+"<br/>");
+      }
+
+    }
+
+    // 클래스 사용? 클래스를 생성 후 사용한다. (new)
+    let member= new Member('홍길동',25);
+    document.write("1: " + member.name + " / " + member.age + "<br/>");
+    member.memberPrint(); //메소드 호출. 멤버클래스를 통해서 메소드를 호출함.
+  </script>
+</head>
+<body>
+  <h2>클래스 연습 (java처럼)</h2> 
+</body>
+</html>
