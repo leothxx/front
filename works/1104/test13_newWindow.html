@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>newWindow.html(새창 띄우기)</title>
+  <script>
+    'use strict';
+
+    function newWin() {
+      let url = "https://www.naver.com";
+      let windowName = "로롱"; //생략가능
+      // let opt = "width=800px, height=600px"; //javascript에서는 : ; 가 아닌 = , 이다.
+      let opt = "width=800px, height=600px, left=300px, top=200px"; //javascript에서는 : ; 가 아닌 = , 이다.
+      window.open(url, windowName, opt);
+    }
+  </script>
+</head>
+<body>
+  <h2>새창띄우기 - 부모창</h2>
+  <p>
+    <input type="button" value="새창띄우기" onclick="newWin()"/>
+  </p>
+</body>
+</html>

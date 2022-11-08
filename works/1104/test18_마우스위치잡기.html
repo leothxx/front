@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 위치 잡기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    function mDown(e) { //발생된 이벤트에 대해 실행할땐 매개변수를 준다.
+      let str = "";
+      let x = e.screenX;
+      let y = e.screenY;
+
+      str += "발생한 이벤트 : " + e.type + "<br/>";
+      str += "X 좌표 : " + x + "<br/>";
+      str += "Y 좌표 : " + y + "<br/>";
+      demo.innerHTML = str;
+    }
+    function mClick(e) {
+      document.getElementById("demo").style.backgroundColor="#f00"; // css에서는 background-color 인데, javascript에선 backgroundColor 임.
+      document.getElementById("demo").style.color="#fff";
+    }
+    function mDblClick(e) {
+      alert("더블 클릭 이벤트 발생!");
+      document.getElementById("demo").style.backgroundColor="#fff";
+      document.getElementById("demo").style.color="#000";
+    }
+    document.onclick = mClick;
+    document.ondblclick = mDblClick; // 더블클릭은 on dbl(더블) click 임.
+    document.onmousedown = mDown;
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>마우스 위치 잡기</h2>
+    <p>마우스를 클릭하시면 현재 좌표가 출력됩니다.</p>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+  <p><br/></p>
+</body>
+</html>
