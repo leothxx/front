@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict';
-    const member = {
+    const member = { //vo, dto로 사용하기 위해 만든 객체임. 해당 객체를 웹으로 넘기려면 XML 혹은 JSON으로 옮겨야함. 
       name : '홍길동',
       age : 25,
       color : 'white',
@@ -22,9 +22,9 @@
     }
     let json = JSON.stringify(member); // object를 json으로 바꾸기 위해서 줌. stringify는 문자열로 주기 위해서. [인코딩]
     console.log(json);
-    const obj = JSON.parse(json); // 슽으링으로 만든 JSON을 다시 Object로 변환한다.(parse) [디코딩]
+    const obj = JSON.parse(json); // 스트링으로 만든 JSON을 다시 Object로 변환(파싱[parse])한다.(parse) [디코딩]
     console.log(obj);
-    console.log(member.atom());
+    member.atom();
   </script>
 </head>
 <body>

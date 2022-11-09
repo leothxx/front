@@ -9,26 +9,27 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script>
-    //이 복잡한 JavaScript를 JQuery 라이브러리를 사용하면 더욱 더 간편하게 사용할 수 있음.
     'use strict';
-    window.onload = function() { //로딩하자마자 부름.
-      let costVar = document.getElementById("cost"); //속성을 전부 다 가져옴.
-      let suVar = document.getElementById("su");
-      let demo = document.getElementById("demo");
-      let totalBtn = document.getElementById("totalBtn");
-
-      totalBtn.addEventListener('click',function() { //tltalBtn에 'click'이벤트가 이루어졌을 때 익명함수 호출
-        let cost = Number(costVar.value);
-        let su = Number(suVar.value);
+    // $(document).ready(function(){  //알아서 이 위치가 어디에있든 바디에 있는 내용을 한번 올리고 시작한다.
+    // $(function() { // jQuery 2.0 이상부터는 ready도 귀찮다고 생략해버림. 
+    jQuery(function() { // 이전에는 $가 아닌 jQuery로 사용했었다. 하지만 길다고 판단하여 $로 바꿨는데 php 언어에서 $로 사용하는 다른언어가 있어, 웹프로그램에서 간혹 에러가 나는 상황이 있을 수 있다. 고로 JQuery에서 $를 사용 할 수 있게 지정해야한다. (쉼표사용2html 참고!)
+      jQuery("#totalBtn").click(function(){
+        let cost = jQuery("#cost").val(); //id가 cost의 값을 가져오기. val(); 은 jQuery의 함수임.
+        let su = jQuery("#su").val();
         if(isNaN(cost) || isNaN(su)) {
-          alert("숫자만 입력하세용");
-          return false;
+            alert("숫자만 입력하세용");
+            // cost.select(); //범위지정
+            jQuery("#cost").select();
+            // cost.focus(); //커서 이동
+            jQuery("#cost").focus();
+            return false; //return false는 false가 기본값이기에 return만 써도 된다.
         }
-        let res = cost * su ;
-        demo.innerHTML = res; 
+        let res = cost * su;
+        demo.innerHTML = res;
       });
-    }
+    });
   </script>
 </head>
 <body>

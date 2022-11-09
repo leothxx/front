@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slice 연습</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(function(){
+      let varDiv = $('.container div').css('color','lightgray');
+
+      varDiv.slice(2,5).css('color','orange'); //slice(시작인덱스, 마지막인덱스-1)
+      varDiv.slice(-3,-1).css('color','green'); // -3번째부터 -1번째 전(-2)까지
+      varDiv.slice(-3).css('color','red'); // 뒤에를 빼면 마지막 까지 간다.
+
+      
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>slice 연습</h2>
+    <div id="a1">Item1</div>
+    <div id="a2">Item2</div>
+    <div id="a3">Item3</div>
+    <div id="a4">Item4</div>
+    <div id="a5">Item5</div>
+    <div id="a6">Item6</div>
+    <div id="a7">Item7</div>
+    <div id="a8">Item8</div>
+    <div id="a9">Item9</div>
+    <div id="a10">Item10</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window.onload</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(document).ready(function(){  //알아서 이 위치가 어디에있든 바디에 있는 내용을 한번 올리고 시작한다.
+      // $("#demo").css("color",'red');
+      // $("#demo").css("fontSize",'20pt'); // css명령이 일단 기본적으로 가능하기에 font-size도 가능하지만 가끔 버전에 따라 - 들어간 css명령이 사용되지 않는 경우가 있음. 그럴땐 카멜표기법을 이용하여 fontSize로 사용하면 된다.
+      $("#demo").css({"color":"red","fontSize":"20pt"}); //두개 이상의 명령을 주기 위해선, {} 을 넣고 {}안에 "color" : "red" , 이런식으로 작성하면 된다. ,가 아닌 :으로 명령을 주고, 다음 명령을 사용할때 , 를 사용한다.
+      $("#totalBtn").click(function(){
+        let cost = $("#cost").val(); //id가 cost의 값을 가져오기. val(); 은 jQuery의 함수임.
+        let su = $("#su").val();
+        if(isNaN(cost) || isNaN(su)) {
+            alert("숫자만 입력하세용");
+            // cost.select(); //범위지정
+            $("#cost").select();
+            // cost.focus(); //커서 이동
+            $("#cost").focus();
+            return false; //return false는 false가 기본값이기에 return만 써도 된다.
+        }
+        let res = cost * su;
+        demo.innerHTML = res;
+      });
+    });
+
+    // 이곳에 새로운 유지보수 내역을 기록(날짜와 함께....)
+    $(document).ready(function(){
+      $("#demo").css({"color":"blue","fontSize":"30pt"});
+    });
+  </script>
+  <style>
+    /*
+    #demo {
+      color: red;
+      font-size: 20pt;
+    }
+    */
+  </style>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>상품가격 계산</h2>
+    <form name="myform">
+      <div>
+        상품가격
+        <input type="text" name="cost" id="cost" autofocus class="form-control"/>
+    </div>
+    <div>
+      수량
+      <input type="number" name="su" id="su" class="form-control mb-3"/>
+    </div>
+    <div>
+      <input type="button" value="계산" id="totalBtn" class="btn btn-success"/>
+    </div>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+  <p><br/></p>
+</body>
+</html>

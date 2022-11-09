@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first 혹은 last를 이용하여 값을 빼서 그룹지기</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(document).ready(function(){
+      // $('div span').css("color","orange");
+      $('div span:first').css("color","orange"); // 최초 한개만 적용된다.
+      $('div span:first-child').css({"color":"orange","fontSize":"20px"}); // div별로 그룹을 묶고, 그 중에서 첫번째 요소만 적용 (first-child 첫번째 자식)
+      $('div span:only-child').css({"textDecoration":"underline","fontSize":"40px"}); // only-child는 어떤 요소의 자식이 하나밖에 없을 때 적용함.
+      $('div span:only-of-type').css({"border":"1px solid red","fontSize":"10px"}); // only-of-type 선택자는 같은 유형의 형제가 없을 때 적용함.
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <span>1짜장면</span>
+    <span>1짬뽕</span>
+    <span>1탕수육</span>
+    <span>1볶음밥</span>
+    <span>1팔보채</span>
+  </div>
+  <hr/>
+  <div>
+    <b>2짜장면</b>
+    <span>2짬뽕</span>
+    <span>2탕수육</span>
+    <span>2볶음밥</span>
+    <span>2팔보채</span>
+  </div>
+  <hr/>
+  <div>
+    <span>3짜장면</span>
+  </div>
+  <hr/>
+  <div>
+    <span>4짜장면</span>
+    <span>4짬뽕</span>
+    <span>4탕수육</span>
+    <b>4볶음밥</b>
+    <span>4팔보채</span>
+  </div>
+  <div>
+    <b>5짜장면</b>
+    <b>5짬뽕</b>
+    <b>5탕수육</b>
+    <b>5볶음밥</b>
+    <span>5팔보채</span>
+  </div>
+  <hr/>
+</body>
+</html>
