@@ -11,16 +11,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict';
+    let chai;
     $(function(){
       let boxHeight = $('#intro').height();
       let scrollHeight = $('#intro').prop('scrollHeight');
       let scrollTop = $('#intro').scrollTop();
-    //   console.log(boxHeight); //선(1x2)과 패딩(4x2)을 뺀 190이 나옴.
-    //   console.log(scrollHeight);
-    //   console.log(scrollTop);
-      let chai = scrollHeight - boxHeight; //스크롤바의 높이와 박스의 높이를 빼면 스크롤바를 마지막으로 내림.
+      //   console.log(boxHeight); //선(1x2)과 패딩(4x2)을 뺀 190이 나옴.
+      //   console.log(scrollHeight);
+      //   console.log(scrollTop);
+      chai = scrollHeight - boxHeight; //스크롤바의 높이와 박스의 높이를 빼면 스크롤바를 마지막으로 내림.
       $('#intro').scrollTop(chai);
+
+      $('#btnEnd').click(function(){
+        $('#intro').scrollTop(chai);
+      })
     });
+    
+    function lastCheck(){
+      alert("lastCheck()함수를 호출하셨습니당"); //일반 onclick 명령은 JQuery안에서 실행할 수 없다.
+      $('#intro').scrollTop(chai); // chai변수를 전역변수로 올려놨기에, javascript에서도 혼용하여 사용할 수 있음.
+    }
   </script>
   <style>
     #intro {
@@ -36,7 +46,7 @@
 <body>
   <p><br/></p>
   <div class="container">
-    <div><input type="button" value="영역의 끝으로 이동" id="btnEnd" class="btnEnd btn-secondary"/></div>
+    <div><input type="button" value="영역의 끝으로 이동" id="btnEnd" onclick="lastCheck()"class="btnEnd btn-secondary"/></div>
     <h2>자기소개</h2>
     <div id="intro">
       <div>1.자기소개를 작성합니다.</div>

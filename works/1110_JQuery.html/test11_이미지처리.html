@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 속성 변경</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    $(function(){
+      $('#btn1').click(function(){
+        $('#img1').attr({
+          width : "200px",
+          border : "5px solid gray", //안먹음
+          title : "뚱댑"
+        });
+      });
+      $('#btn2').click(function(){
+        //location.reload() 도 사용가능하지만, 새로고침은 다른 것도 새로고쳐버리기에 사용 하지 않아야할때도있당.
+        $('#img1').attr({
+          width : "100px",
+          border : "0px", //안먹음
+          title : "댑"
+        });
+      });
+
+      $('#btn3').click(function(){
+        $('#img1').attr({
+          src : "../../images/dap3.jpg",
+          width : "100px",
+          border : "0px", //안먹음
+          title : "댑"
+        });
+      });
+    });
+  </script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>이미지 속성 변경</h2>
+    <p>
+      <button type="button" id="btn1" class="btn btn-success">크기변경</button>
+      <button type="button" id="btn2" class="btn btn-info">크기복귀</button>
+      <button type="button" id="btn3" class="btn btn-primary">사진변경</button>
+    </p>
+    <div>
+      <img src="../../images/dap2.png" id="img1" width="100px" alt="댑" title="댑"/>
+    </div>
+  </div>
+  <p><br/></p>
+</body>
+</html>

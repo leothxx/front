@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basic</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    let sw=0;
+    $(function(){
+      $('#acc > .content').hide(); //acc 밑에 content (부메뉴)를 초기화면에서 제거.
+
+      //메뉴 1을 클릭하면 부메뉴 1만 열린다.
+      $('#acc > .menu').click(function(){
+        // $(this).next().show(); // 현재 항목의 다음항목(next())에 대한 작업의 처리
+        // $(this).next().show(200);
+        // $(this).next().toggle();
+        $('#acc > .content').hide(300);
+        if(sw == 0){
+          $(this).next().toggle(300);//현재 클릭한거에 다음 항목을 토글 0.3초를 이용해서 보여줭
+        }
+      });
+
+      // 타이틀을 누르면 부메뉴를 닫는다.
+      $('#title').click(function(){
+        $('#acc > .content').hide();
+      });
+    });
+  </script>
+  <style>
+    div.accordion {
+      width: 300px;
+    }
+    div.menu, div.content {
+      border: 1px solid gray;
+      text-align: center;
+      cursor: pointer;
+    }
+    div.menu {
+      padding: 5px;
+      background-color: blanchedalmond;
+      color: gray;
+    }
+    div.content {
+      padding: 5px;
+    }
+    .content a {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<p><br/></p>
+  <div class="card-body accordion" id="acc">
+    <h3 id="title">아코디언 UI</h3>
+    <div class="menu menu1">게시판관리</div>
+    <div class="content content1">
+      <a href="#">공지사항관리</a><br/>
+      <a href="#">질문게시판관리</a><br/>
+      <a href="#">고객센터관리</a><br/>
+      <a href="#">할인게시판관리</a><br/>
+      <a href="#">협찬게시판관리</a><br/>
+    </div>
+    <div class="menu menu2">상품관리</div>
+    <div class="content content2">
+      <a href="#">의류관리</a><br/>
+      <a href="#">신발관리</a><br/>
+      <a href="#">용품관리</a><br/>
+      <a href="#">가격수정</a><br/>
+    </div>
+    <div class="menu menu3">회원관리</div>
+    <div class="content content3">
+      <a href="#">회원정보관리</a><br/>
+      <a href="#">신규회원관리</a><br/>
+      <a href="#">전체회원관리</a><br/>
+    </div>
+    <div class="menu menu4">주문관리</div>
+    <div class="content content4">
+      <a href="#">신규주문</a><br/>
+      <a href="#">배송관리</a><br/>
+      <a href="#">주문취소</a><br/>
+      <a href="#">환불관리</a><br/>
+    </div>
+    <hr/>
+    <div id="demo">
+      아코디언 메뉴를 JQuery로 만들어봅니다.</br>
+      JQuery의 플러그인으로도 사용할 수 있는 아코디언 메뉴를 코드로 간단히 만들어봅니다.
+    </div>
+<p><br/></p>
+</body>
+</html>

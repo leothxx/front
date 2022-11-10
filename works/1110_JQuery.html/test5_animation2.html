@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basic</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(function(){
+      let y = 0;
+      let r = 0;
+
+      $('#moveRight').click(function(){
+        if(r >= 1000){
+          alert("더이상 우측으로 갈 수 없습니다.");
+          return false;
+        }
+        r += 100;
+        $('#img1').animate({"marginLeft":(r)+"px","width":"100px","height":"100px"},
+        500,                  //지연시간
+        "linear",             //빠른정도 : default = normal / linear(빠르게) / easing(천천히)
+        function(){
+          $(this).css("border","1px solid red");
+        });
+      });
+
+      $('#moveLeft').click(function(){
+        if(r <= -400){
+          alert("더이상 좌측으로 갈 수 없습니다.");
+          return false;
+        }
+        r -= 100;
+        $('#img1').animate({"marginLeft":(r)+"px","width":"100px","height":"100px"},
+        500,                  //지연시간
+        "linear",             //빠른정도 : default = normal / linear(빠르게) / easing(천천히)
+        function(){
+          $(this).css("border","1px solid red");
+        });
+      });
+
+      $('#moveDown').click(function(){
+        if(y >= 1000) {
+          alert("더이상 내려갈 수 없습니다.");
+          return false;
+        }
+        y += 100;
+        $('#img1').animate({marginTop:(y)+"px","width":"100px","height":"100px"})
+      });
+
+      $('#moveUp').click(function(){
+        if(y <= -500) {
+          alert("더이상 올라갈 수 없습니다.");
+          return false;
+        }
+        y -= 100;
+        $('#img1').animate({marginTop:(y)+"px","width":"100px","height":"100px"})
+      });
+    });
+  </script>
+  <style>
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>Animation 연습</h2>
+  <hr/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name="moveUp" id="moveUp" class="btn-sm btn-primary">위로이동</button><br/>
+  <button type="button" name="moveLeft" id="moveLeft" class="btn-sm btn-primary">좌측이동</button>
+  <button type="button" name="moveRight" id="moveRight" class="btn-sm btn-primary">우측이동</button><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name="moveDown" id="moveDown" class="btn-sm btn-primary">아래이동</button>
+  <br/>
+  <hr/>
+  <br/>
+  <div>
+    <img src="../../images/토쿠시마.jpg" width="100px" height="100px" name="img1" id="img1"/>
+  </div>
+</div>
+<p><br/></p>
+</body>
+</html>
